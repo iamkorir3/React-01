@@ -42,3 +42,51 @@ summary;
 const pagesRnge =
   pages > 1000 ? "pages over a thousand" : "less than a thousand";
 pagesRnge;
+
+const books = getBooks();
+
+const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log(x);
+
+const tittles = books.map((book) => book.title);
+tittles;
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+}));
+
+essentialData;
+// FILTER
+
+const longBooks = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+longBooks;
+
+const adventureBooks = books
+  .filter((book) => book.genres.includes("adventure"))
+  .map((book) => book.title);
+
+adventureBooks;
+
+const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
+pagesAllBooks;
+
+const arr = [3, 7, 1, 9, 6];
+const sorted = arr.slice().sort((a, b) => b - a);
+sorted;
+arr;
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+sortedByPages;
+
+//ADD BOOK  OBLECT TO THE ARRAY
+const newBook = {
+  id: 6,
+  title: "Harry pooter and the Chamber of Secrets",
+  author: "J. K. Rowling",
+};
+
+const bookAfterAdd = [...books, newBook];
+bookAfterAdd;
