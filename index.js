@@ -90,3 +90,24 @@ const newBook = {
 
 const bookAfterAdd = [...books, newBook];
 bookAfterAdd;
+
+// DELETE BOOK
+const booksAfterDelete = bookAfterAdd.filter((book) => book.id !== 3);
+booksAfterDelete;
+
+// UPDATE A BOOK
+const bookAfterUpdate = booksAfterDelete.map(book);
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+console.log("korir");
+
+async function getTodos() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+  console.log(data);
+}
+
+getTodos();
